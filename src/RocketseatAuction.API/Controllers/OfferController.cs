@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RocketseatAuction.API.Comunication.Requests;
+using RocketseatAuction.API.Entities;
 using RocketseatAuction.API.Filters;
 using RocketseatAuction.API.UseCases.Offers.CreateOffer;
+using RocketseatAuction.API.UseCases.Offers.GetOffers;
 
 namespace RocketseatAuction.API.Controllers
 {
@@ -18,6 +20,13 @@ namespace RocketseatAuction.API.Controllers
             var id = useCase.Execute(itemId, request);
 
             return Created(string.Empty, id);
+        }
+
+        [HttpGet]
+        public List<Offer> GetOffers([FromServices] GetOffersUseCase useCase)
+        {
+            return useCase.Execute();
+
         }
 
     }

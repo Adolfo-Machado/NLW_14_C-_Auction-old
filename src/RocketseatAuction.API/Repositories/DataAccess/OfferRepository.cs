@@ -15,5 +15,13 @@ namespace RocketseatAuction.API.Repositories.DataAccess
             _dbContext.SaveChanges();
 
         }
+
+        public List<Offer> GetAll ()
+        {
+            return _dbContext.Offers
+                .Include(offer => offer.User)
+                .Include(offer => offer.Item)
+                .ToList();
+        }
     }
 }

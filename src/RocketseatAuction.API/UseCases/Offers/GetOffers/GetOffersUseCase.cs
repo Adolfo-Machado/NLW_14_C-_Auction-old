@@ -1,15 +1,15 @@
 ﻿using RocketseatAuction.API.Contracts;
+using RocketseatAuction.API.Entities;
 
 namespace RocketseatAuction.API.UseCases.Offers.GetOffers
 {
     public class GetOffersUseCase
-    {
-        public class GetOffers
-        {
-            private readonly IAuctionRepository _repository;
+    {        
+        private readonly IOfferRepository _repository;
 
-            public GetOffers(IAuctionRepository repository) => _repository = repository;
-            
-        }
+        public GetOffersUseCase(IOfferRepository repository) => _repository = repository;
+
+        public List<Offer> Execute() => _repository.GetAll();            
+        
     }
 }
