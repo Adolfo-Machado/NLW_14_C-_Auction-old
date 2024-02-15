@@ -1,5 +1,4 @@
 ﻿using RocketseatAuction.API.Contracts;
-using RocketseatAuction.API.Entities;
 
 namespace RocketseatAuction.API.UseCases.Offers.GetOffers
 {
