@@ -1,6 +1,6 @@
 ﻿namespace RocketseatAuction.API.Enums
 {
-    public enum Condition
+    public enum ECondition
     {
         NEW = 0,
         GREAT = 1,
